@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{ 
+  :root{
+    /* ### Primary */
+    --purple: hsl(259, 100%, 65%);
+    --light-red: hsl(0, 100%, 67%);
+
+    /* ### Neutral */
+    --off-white: hsl(0, 0%, 94%);
+    --light-grey: hsl(0, 0%, 86%);
+    --smokey-grey: hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+  }
+  body{
+    @apply bg-[var(--light-grey)] grid place-content-center h-screen
+  }
+  main{
+    @apply max-w-[1440px] min-w-[375px]
+  }
+  h1,h2,h3{
+    @apply text-8xl font-extrabold
+  }
+}
+
+@layer components{ 
+  .container{
+    @apply w-full bg-white w-9/12 rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-[100px]
+  }
+  .form{
+    @apply flex gap-2 w-full px-10 py-10
+  }
+  .input-group{
+    @apply flex flex-col w-1/4
+  }
+  .input-group > .title{
+    @apply text-base font-semibold text-[var(--smokey-grey)]
+  }
+  .input-group > .input{ 
+    @apply border border-[var(--light-grey)] text-xl rounded-lg p-5
+  }
+  .divider{ 
+    @apply bg-[var(--light-grey)] w-10 h-[2px] grow 
+  }
+  .divider-arrow {
+    @apply bg-[var(--purple)] rounded-full p-4 
+  }
+  .numbers {
+    @apply text-[var(--purple)]
+  }
+}
