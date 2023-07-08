@@ -7,6 +7,10 @@ const regExp = /^\d+$/
 
 function useDate()
 {
+    // * THIS CALCULATE THE YEARS, MONTH AND YEARS 😁
+    // TODO : CHECK THE VALIDATIONS 🤔
+    // ! WARNING: DON'T VALIDATE IF THE DATE IS A VALID DATE LIKE 1991-04-31 (THIS DATE DON'T HAVE 31 DAYS) 😫
+
     const [day, setDay] = useState()    
     const [dayError, setDayError] = useState(false) 
     const [month, setMonth] = useState()
