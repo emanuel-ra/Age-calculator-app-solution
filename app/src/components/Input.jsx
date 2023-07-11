@@ -1,13 +1,15 @@
 import { useId } from "react";
 import PropTypes from 'prop-types'
 
-export default function Input({attributes, handleFunction, maxLength,error}) {
+export default function Input({attributes, handleFunction, maxLength,error, cleanResults}) {
     const { title, placeholder } = attributes
     const inputId = useId();
 
     const handleChange = (event) => {
         if(event.target.value.length === maxLength)
             handleFunction(event.target.value)
+        if(event.target.value==='')
+            cleanResults()
     }
     return (
         <div className="input-group">
@@ -22,5 +24,6 @@ Input.propTypes = {
     attributes: PropTypes.object ,
     handleFunction: PropTypes.func ,
     maxLength: PropTypes.number ,
-    error: PropTypes.bool
+    error: PropTypes.bool ,
+    cleanResults: PropTypes.func
 }
