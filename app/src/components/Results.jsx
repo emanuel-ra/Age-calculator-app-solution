@@ -6,6 +6,8 @@ function Results() {
   const txtMonthsId = useId();
   const txtDaysId = useId();
   const duration = 900
+
+  const { numberDays, numberMonths, numberYears } = useApp()
   
   const animateValue = (obj, start, end, duration) => {
     let startTimestamp = null;
@@ -21,17 +23,27 @@ function Results() {
   }
 
   useEffect( ()=>{
-  
+    const objYears = document.getElementById(txtYearsId)
+    if(numberYears>0)
+      animateValue(objYears,0,numberYears,500)
+    
+    const objMonth = document.getElementById(txtMonthsId)
+    if(numberMonths>0)
+      animateValue(objMonth,0,numberMonths,500)
+
+    const objDay = document.getElementById(txtDaysId)
+    if(numberDays>0)
+      animateValue(objDay,0,numberDays,500)
+
   })
+
   
-  const numberOfYear=0
-  const numberOfMonths=0
-  const numberOfDays=0
+  
   return (
     <div className='p-10'>
-        <h1><span className="numbers" id={txtYearsId}>{numberOfYear>0? numberOfYear:'--'}</span> <span>years</span></h1>
-        <h2><span className="numbers" id={txtMonthsId}>{numberOfMonths>0? numberOfMonths:'--'}</span> <span>months</span></h2>
-        <h3><span className="numbers" id={txtDaysId}>{numberOfDays>0? numberOfDays:'--'}</span> <span>days</span></h3>
+        <h1><span className="numbers" id={txtYearsId}>{numberYears>0? numberYears:'--'}</span> <span>years</span></h1>
+        <h2><span className="numbers" id={txtMonthsId}>{numberMonths>0? numberMonths:'--'}</span> <span>months</span></h2>
+        <h3><span className="numbers" id={txtDaysId}>{numberDays>0? numberDays:'--'}</span> <span>days</span></h3>
     </div>
   )
 }
