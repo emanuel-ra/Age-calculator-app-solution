@@ -25,15 +25,15 @@ function Results() {
   useEffect( ()=>{
     const objYears = document.getElementById(txtYearsId)
     if(numberYears>0)
-      animateValue(objYears,0,numberYears,500)
+      animateValue(objYears,0,numberYears,duration)
     
     const objMonth = document.getElementById(txtMonthsId)
     if(numberMonths>0)
-      animateValue(objMonth,0,numberMonths,500)
+      animateValue(objMonth,0,numberMonths,duration)
 
     const objDay = document.getElementById(txtDaysId)
     if(numberDays>0)
-      animateValue(objDay,0,numberDays,500)
+      animateValue(objDay,0,numberDays,duration)
 
   })
 
