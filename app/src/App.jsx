@@ -1,4 +1,5 @@
 import Divider from "./components/Divider"
+import Footer from "./components/Footer"
 import Form from "./components/Form"
 import Results from "./components/Results"
 
@@ -11,7 +12,8 @@ function App() {
         <Form />
         <Divider />
         <Results />
-      </section>
+        <Footer />
+      </section>      
     </main>
   )
 } 
